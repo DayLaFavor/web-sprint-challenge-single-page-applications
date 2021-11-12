@@ -1,4 +1,16 @@
 import { useState } from 'react';
+import * as yup from 'yup';
+
+const yupForm = yup.object().shape({
+    name: yup.string().required('name is required').min(2, 'name must be at least 2 characters'),
+    size: yup.string().oneOf(['Small', 'Medium', 'Large']),
+    special: yup.string(),
+    cheese: yup.boolean(),
+    pineapples: yup.boolean(),
+    pepperoni: yup.boolean(),
+    olives: yup.boolean(),
+    instructions: yup.string()
+});
 
 const Form = () => {
   const [input, setInput] = useState({});
@@ -61,26 +73,26 @@ const Form = () => {
 
     <label>Choose your Size
       <select
-        id="size-dropdown"
-        className="Size"
-        name="Size"
+        id='size-dropdown'
+        className='size'
+        name='size'
         onChange={handleChange}
         value={size}
       >
-      <option value="SMALL">SMALL</option>
-      <option value="MEDIUM">MEDIUM</option>
-      <option value="LARGE">LARGE</option>
+      <option value='SMALL'>SMALL</option>
+      <option value='MEDIUM'>MEDIUM</option>
+      <option value='LARGE'>LARGE</option>
       </select>
     </label>
     <label>Special Instructions:
         <textarea
-        id="special-text"
-        name="specialText"
+        id='special-text'
+        name='specialText'
         value={''}
         onChange={handleChange}
         />
     </label>
-    <button id="order-button" type="submit">
+    <button id='order-button' type='submit'>
       Order
     </button>
   </form>
