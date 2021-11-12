@@ -1,10 +1,30 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Form from './Components/Form'
+import Home from './Components/Home'
 
 const App = () => {
   return (
     <>
-      <h1>Lambda Eats</h1>
-      <p>You can remove this code and create your own header</p>
+      <Router>
+      <div>
+        <Link to="/">Home</Link>
+      </div>
+      <div>
+        <Link id="order-pizza" to="/pizza">
+          Form
+        </Link>
+      </div>
+      <hr />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/pizza">
+          <Form />
+        </Route>
+      </Switch>
+    </Router>
     </>
   );
 };
