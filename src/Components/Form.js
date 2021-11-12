@@ -72,15 +72,14 @@ const Form = () => {
       <option value="LARGE">LARGE</option>
       </select>
     </label>
-
-    <label htmlfor="special-text">Special Instructions:</label>
-    <textarea
-      id="special-text"
-      name="specialText"
-      value={''}
-      onChange={handleChange}
-    />
-
+    <label>Special Instructions:
+        <textarea
+        id="special-text"
+        name="specialText"
+        value={''}
+        onChange={handleChange}
+        />
+    </label>
     <button id="order-button" type="submit">
       Order
     </button>
