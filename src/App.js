@@ -11,11 +11,11 @@ const App = () => {
     <div className="header">
       <h1>Site Title</h1>
       <nav>
-      <Link to="/"><button id="home-button">Home</button></Link>
-      <Link to="/pizza"><button id="order-pizza">Pizza?</button></Link>
+        <Link to="/"><button id="home-button">Home</button></Link>
+        <Link to="/pizza"><button id="order-pizza">Pizza?</button></Link>
       </nav>
       <Switch>
-      <Route path="/pizza" component={Form} />
+        <Route path="/pizza" component={Form} />
         <Route path="/" component={Home} />
       </Switch>
       <Home/>
